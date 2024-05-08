@@ -1,0 +1,99 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title><b>Learn More</b></ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--This page will be used to hold onto various pieces of data for the user to check up on for dnd 
+depending on the button clicked-->
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">DND Working</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!--This div provided the user with 4 buttons to call 4 different apis depending on the their value-->
+  <div class="Intro">
+  <h2><b>Welcome to our DND info Page</b></h2>
+  <p>Here is where you can find some basic information based on each of the following areas.
+    Simply click one of the buttons to find out more: </p>
+    <ion-button (click)="chooseInfo('classes/')">Classes</ion-button>
+    <ion-button (click)="chooseInfo('races/')">Races</ion-button>
+    <ion-button (click)="chooseInfo('spells/')">Spell List</ion-button>
+    <ion-button (click)="chooseInfo('monsters/')">Monsters</ion-button>
+  <br>
+  </div>
+
+  <!--The following is 4 different divs which hold onto the possible data for the apis
+  If the array associated with the div is null (aka it isnt called) then the appropriate area is invisible
+  however if its button is pushed the appropriate area should appear with its own unique items-->
+  <div class="ion-text-center">
+    <ul *ngIf="classList">
+      <p>Classes are the bread and butter of dnd, they define who you are and how you fight.<br>
+      Each Class offers their own respective strenghts & weaknesses, with some specializing in<br>
+      magic & the arcane arts and those who choose to go purely melee attacks or something inbetween.<br>
+      Whatever you choose though, everything is fun!</p>
+      <li *ngFor="let element of elements">
+        <h2><b>Name:</b> {{element.name}}</h2>
+        <p><b>Hit Dice:</b> {{element.hit_dice}}</p>
+        <p><b>Health at Level 1:</b> {{element.hp_at_1st_level}}</p>
+        <p><b>Health at higher levels:</b> {{element.hp_at_higher_levels}}</p>
+        <p><b>Proficient Armor:</b> {{element.prof_armor}}</p>
+        <p><b>Proficient Weapons:</b> {{element.prof_weapons}}</p>
+        <p><b>Proficient Saving throws:</b> {{element.prof_saving_throws}}</p>
+        <p><b>Proficient Skills:</b> {{element.prof_skills}}</p>
+      </li>
+    </ul>
+    <ul *ngIf="raceList">
+      <p>Races, another key characteristic of DND. These help further define<br> 
+        your background and what you look like, choose wisely thoug as each class<br> 
+        offers their own respective strenghts & weaknesses.</p>
+      <li *ngFor="let element of elements">
+        <h2><b>Name:</b> {{element.name}}</h2>
+        <p><b>Description:</b> {{element.desc}}</p>
+        <p><b>Special Descriptions:</b> {{element.asi_desc}}</p>
+        <p><b>Age:</b> {{element.age}}</p>
+        <p><b>Alignment:</b> {{element.alignment}}</p>
+        <p><b>Size:</b> {{element.size}}</p>
+        <p><b>Speed:</b> {{element.speed_desc}}</p>
+      </li>
+    </ul>
+    <ul *ngIf="spellList">
+      <p>Spells, magic, the arcane arts. Whatever you want to call it magic is a key part<br>
+      of DND being used for a wide range of things from combat to puzzles. <br>
+      All spells are useful no matter their power, so take your time and read each carefully to <br>
+      see which ones best fit your play style.</p>
+      <li *ngFor="let element of elements">
+        <h2><b>Name:</b> {{element.name}}</h2>
+        <p><b>Spell Description:</b> {{element.desc}}</p>
+        <p><b>Higher Levels:</b> {{element.higher_level}}</p>
+        <p><b>Spell Range:</b> {{element.range}}</p>
+        <p><b>Spell Duration:</b> {{element.duration}}</p>
+        <p><b>Concentration:</b> {{element.concentration}}</p>
+        <p><b>Casting Time:</b> {{element.casting_time}}</p>
+        <p><b>Spell Level:</b> {{element.level}}</p>
+        <p><b>Spell School:</b> {{element.school}}</p>
+      </li>
+    </ul>
+    <ul *ngIf="monsterList">
+      <h3>Monsters!</h3>
+      <p>These are your primary enemies when it comes to DND. The foes you will encounter on your
+      journey.</p>
+      <li *ngFor="let element of elements">
+        <h2><b>Name:</b> {{element.name}}</h2>
+        <p><b>Size:</b> {{element.size}}</p>
+        <p><b>Monster Type:</b> {{element.type}}</p>
+        <p><b>Alignment:</b> {{element.alignment}}</p>
+        <p><b>Armor Class:</b> {{element.armor_class}}</p>
+        <p><b>Monster Health:</b> {{element.hit_points}}</p>
+        <p><b>Hit Dice:</b> {{element.hit_dice}}</p>
+        <p><b>Challenge Rating:</b> {{element.challenge_rating}}</p>
+      </li>
+    </ul>
+  </div>
+</ion-content>
+
+

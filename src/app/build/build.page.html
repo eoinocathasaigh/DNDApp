@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title><b>Build-A-Character</b></ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!--Image slider - User can cycle through some images to see what certain classes & races look like-->
+  <swiper-container>
+    <swiper-slide><img src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/02/13/dnd-bard-2-1024x576.jpg?width=3840&quality=75&format=auto"></swiper-slide>
+    <swiper-slide><img src="https://assetsio.gnwcdn.com/dnd-cleric-images-8.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=w"></swiper-slide>
+    <swiper-slide><img src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/02/13/dnd-fighter.jpg?width=3840&quality=60&format="></swiper-slide>
+    <swiper-slide><img src="https://www.wargamer.com/wp-content/sites/wargamer/2023/06/dnd-monk-monastery-mentor.jpg"></swiper-slide>
+    <swiper-slide><img src="https://editors.dexerto.com/wp-content/uploads/2024/02/19/paladin-header.jpg"></swiper-slide>
+  </swiper-container>
+
+  <!--Input for user to enter the name of their character to build-->
+  <div class="ion-text-center">
+    <h2><b>Build A Character!</b></h2>
+    <p>Your character is who you are in dnd, so go ahead, build a character: 
+      Give it a name, choose a race, choose a class, choose some armor and finally pick 5 spells for your 
+      journey<br>Have fun & Happy Adventuring!
+    </p>
+    <ion-item>
+      <ion-label><b>Name</b></ion-label>
+      <ion-input type="text" [(ngModel)]="character.name" class="name"></ion-input>
+    </ion-item>
+
+    <!--User can select from a range of options what race they would like their character to be-->
+    <ion-item>
+      <ion-label><b>Race</b></ion-label>
+      <ion-select [(ngModel)]="character.race">
+        <ion-select-option value="Alseid">Alseid</ion-select-option>
+        <ion-select-option value="Catfolk">Catfolk</ion-select-option>
+        <ion-select-option value="Darakhul">Darakhul</ion-select-option>
+        <ion-select-option value="Derro">Derro</ion-select-option>
+        <ion-select-option value="Dragonborn">Dragonborn</ion-select-option>
+        <ion-select-option value="Drow">Drow</ion-select-option>
+        <ion-select-option value="Dwarf">Dwarf</ion-select-option>
+        <ion-select-option value="Elf">Elf</ion-select-option>
+        <ion-select-option value="Erina">Erina</ion-select-option>
+        <ion-select-option value="Gearforged">Gearforged</ion-select-option>
+        <ion-select-option value="Gnome">Gnome</ion-select-option>
+        <ion-select-option value="Half-Elf">Half-Elf</ion-select-option>
+        <ion-select-option value="Half-Orc">Half-Orc</ion-select-option>
+        <ion-select-option value="Halfling">Halfling</ion-select-option>
+        <ion-select-option value="Human">Human</ion-select-option>
+        <ion-select-option value="Minotaur">Minotaur</ion-select-option>
+        <ion-select-option value="Mushroomfolk">Mushroomfolk</ion-select-option>
+        <ion-select-option value="Satarre">Satarre</ion-select-option>
+        <ion-select-option value="Shade">Shade</ion-select-option>
+        <ion-select-option value="Tiefling">Tiefling</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!--Like race the user can select from a range of classes here-->
+    <ion-item>
+      <ion-label><b>Class</b></ion-label>
+      <ion-select [(ngModel)]="character.class">
+        <ion-select-option value="Barbarian">Barbarian</ion-select-option>
+        <ion-select-option value="Bard">Bard</ion-select-option>
+        <ion-select-option value="Cleric">Cleric</ion-select-option>
+        <ion-select-option value="Druid">Druid</ion-select-option>
+        <ion-select-option value="Fighter">Fighter</ion-select-option>
+        <ion-select-option value="Monk">Monk</ion-select-option>
+        <ion-select-option value="Paladin">Paladin</ion-select-option>
+        <ion-select-option value="Ranger">Ranger</ion-select-option>
+        <ion-select-option value="Rogue">Rogue</ion-select-option>
+        <ion-select-option value="Sorcerer">Sorcerer</ion-select-option>
+        <ion-select-option value="Warlock">Warlock</ion-select-option>
+        <ion-select-option value="Wizard">Wizard</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!--Similarly to the other two selections the user can choose their armor-->
+    <ion-item>
+      <ion-label><b>Armor</b></ion-label>
+      <ion-select [(ngModel)]="character.armor">
+        <ion-select-option value="Padded">Padded</ion-select-option>
+        <ion-select-option value="Leather">Leather</ion-select-option>
+        <ion-select-option value="Studded Leather">Studded Leather</ion-select-option>
+        <ion-select-option value="Hide">Hide</ion-select-option>
+        <ion-select-option value="Chain Shirt">Chain Shirt</ion-select-option>
+        <ion-select-option value="Scale Mail">Scale Mail</ion-select-option>
+        <ion-select-option value="Spiked Armor">Spiked Armor</ion-select-option>
+        <ion-select-option value="Breastplate">Breastplate</ion-select-option>
+        <ion-select-option value="Halfplate">Halfplate</ion-select-option>
+        <ion-select-option value="Ring Mail">Ring Mail</ion-select-option>
+        <ion-select-option value="Chain Mail">Chain Mail</ion-select-option>
+        <ion-select-option value="Splint">Splint</ion-select-option>
+        <ion-select-option value="Plate">Plate</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!--List of spells user can choose for their character - Bound to an array in the .ts code-->
+    <ion-item>
+      <ion-label><b>Spells</b></ion-label>
+      <ion-select [(ngModel)]="selectedSpells" multiple="true" cancelText="Cancel" okText="Select" (ionChange)="updateSelectedSpells()">
+        <ion-select-option *ngFor="let spell of availableSpells" [value]="spell">{{ spell }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!--Buttons for user to perform certain actions-->
+    <!--Entered Character Details will be saved to the disk-->
+    <ion-button expand="full" (click)="saveCharacter()">Save Character</ion-button>
+    <!--Character created can be loaded from the disk-->
+    <ion-button expand="full" (click)="loadCharacter()">Load Character</ion-button>
+    <!--User can reset the form to clear all details for their character-->
+    <ion-button expand="full" (click)="resetForm()">Reset</ion-button>
+  </div>
+
+  <!--This area will display the characters details once they've been loaded from the disk-->
+  <div *ngIf="loadedCharacter" class="userChar">
+    <ion-item>
+      <ion-label><b>Name:</b></ion-label>
+      <ion-text>{{loadedCharacter.character.name}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Race:</b></ion-label>
+      <ion-text>{{loadedCharacter.character.race}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Class:</b></ion-label>
+      <ion-text>{{loadedCharacter.character.class}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Shield:</b></ion-label>
+      <ion-text>{{loadedCharacter.character.armor}}</ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Spells:</b></ion-label>
+      <ion-list>
+        <ion-item *ngFor="let spell of loadedCharacter.spells">{{spell}}</ion-item>
+      </ion-list>
+    </ion-item>
+  </div>
+
+</ion-content>

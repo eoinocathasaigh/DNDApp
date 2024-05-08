@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title><b>Roll The Dice!</b></ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--This page can be used as a tool for dice rolling, user is given various dice to roll
+and depending on the button clicked a different result is displayed-->
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Roll the Dice</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="ion-text-center">
+    <h1><b>DICE, DICE & MORE DICE</b></h1>
+    <p>Dice are the foundation od D&D, they provide for much of the games core mechanics, 
+      they come in all different sorts of shapes, sizes and colours.<br>To save you having to go looking for
+      them, this page will provide you with the basic dice in a convenient place for you to roll them.<br> 
+      Give them a go and have some fun! Each button corresponds to a different sided dice.
+    </p>
+
+    <!--Various Buttons for the selection of buttons the user can press-->
+    <ion-button (click)="rollDice('20')">20</ion-button>
+    <ion-button (click)="rollDice('12')">12</ion-button>
+    <ion-button (click)="rollDice('8')">8</ion-button>
+    <ion-button (click)="rollDice('4')">4</ion-button>
+    <ion-button (click)="rollDice('100')">100</ion-button>
+  </div>
+  <!--Once the dice is rolled the result is displayed here in its own unique space-->
+  <div class="DiceSpace">
+    {{diceRoll}}
+  </div>
+</ion-content>

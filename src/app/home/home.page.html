@@ -1,20 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <b>Welcome to Dungeons & Dragons</b>
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!--Eoin Ocathasaigh - G00417466-->
+<!--This will be the main page of the app, user starts here and all pages converge here
+, furthermore they can navigate to the other pages from here-->
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home Page</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!--Sliding container for the user to cycle through different images relating to dnd-->
+  <swiper-container>
+    <swiper-slide><img src="https://cdn.wallpapersafari.com/19/97/MfNw16.jpg"></swiper-slide>
+    <swiper-slide><img src="https://image.api.playstation.com/vulcan/ap/rnd/202308/1519/95cce955dc59d04e2ea5ab624a823ace14e9c5f7e24dfb8f.png"></swiper-slide>
+    <swiper-slide><img src="https://images.alphacoders.com/110/1107087.jpg"></swiper-slide>
+  </swiper-container>
+  <div class="ion-text-center" style="border:5px solid black; width: 400px ;margin: auto;">
+    <h2><b>Welcome to DND Hub</b></h2>
+    <p>The home for those wishing to learn more and experience more about the<br>
+    sensational roleplaying game. To help newcomers get started we offer a few <b><i>services</i></b><br> such as the following:</p>
+    <ul>
+      <li><b>Learning more about various aspects & areas of the game.</b></li>
+      <li><b>Login to your account</b></li>
+      <li><b>Learning more about various aspects & areas of the game.</b></li>
+    </ul>
+    <!--Various buttons for sending the user to the appropriate page-->
+    <div style="border:3px solid black; margin: auto;">
+      <ion-button [routerLink]="['/dice']">See Dice Page</ion-button>
+      <br>
+      <ion-button [routerLink]="['/api-page']">DND Info Page</ion-button>
+      <br>
+      <ion-button [routerLink]="['/web']">Resources</ion-button>
+      <br>
+      <ion-button [routerLink]="['/build']">Build a Character</ion-button>
+    </div>
   </div>
 </ion-content>

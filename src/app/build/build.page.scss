@@ -1,0 +1,53 @@
+/* Apply styles to the swiper-container */
+swiper-container {
+    width: 80%;
+    max-width: 600px; 
+    border: 5px solid white; 
+    border-radius: 10px; 
+}
+  
+  /* Apply styles to the swiper-slide */
+  swiper-slide img {
+    max-width: 100%; 
+    height: 100;
+    border-radius: 8px; 
+  }
+
+  /* Apply styles to the ion-content */
+ion-content {
+    --background: url('https://png.pngtree.com/background/20230605/original/pngtree-dungeon-with-large-dragons-near-it-on-fire-picture-image_2875224.jpg') no-repeat center center / cover;
+    color: #333; /* Text color */
+}
+
+// Apply styles to the ion-title 
+ion-title {
+    color: #ff0000;
+    border-bottom: 2px solid #ff0000; 
+    padding-bottom: 10px;
+  }
+
+  .ion-text-center {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 400px; 
+    margin: 20px auto;
+    border: 5px solid black;
+    text-align: center;
+  }
+
+  .name {
+    text-align: center;
+  }
+
+  .userChar{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    max-width: 400px; 
+    margin: 20px auto;
+    border: 5px solid black;
+    text-align: center;
+  }

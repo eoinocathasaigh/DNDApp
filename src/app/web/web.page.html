@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-title><b>Here are some Resources</b></ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--This page will essentially allow the user to access certain resources by
+routing them to other web pages-->
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">web</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="info">
+    <p>We hope to provide you with basic info for this wonderful game, however we understand 
+      that we are limited in what we can show you.<br> So if you wish to learn more about the various aspects 
+      of Dungeon and Dragons then we have provided you with links to various areas where you can expand 
+      your knowledge at your own pace. Explore and please enjoy!
+    </p>
+  </div>
+  <!--This div will hold onto the basic resources for the user, consisting of some basic buttons-->
+  <div class="ion-text-center">
+    <h1><b>Back To Basics!</b></h1>
+    <p>Want to brush up and expand upon your basics?<br>These websites provide great in depth analysis of 
+      the core aspects of DND and more!
+    </p>
+    <ion-button (click)="moveToPage('begin')">Beginners Guide</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('dm')">Dungeon Masters Guide</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('monster')">Monster Compendium</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('otherworld')">Multiverse Monsters</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('dragon')">Dragons!</ion-button>
+  </div>
+  <!--This div works similarly to the previous with buttons for routing the user to certain pages-->
+  <div class="ion-text-center">
+    <h1><b>More For Masters</b></h1>
+    <p>Want to broaden your horizons?<br>These websites provide further development 
+      and observe some other adventures!
+    </p>
+    <ion-button (click)="moveToPage('chaos')">Curriculum of Chaos</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('adventure')">Adventurers Guide</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('explore')">Explorers Guide</ion-button>
+    <br>
+    <ion-button (click)="moveToPage('inspire')">Land of Inspiration</ion-button>
+  </div>
+</ion-content>
